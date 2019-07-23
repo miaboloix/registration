@@ -51,6 +51,7 @@ def vote(request, question_id):
 		return HttpResponseRedirect(reverse('one:results', args=(question.id,)))
 
 def get_courses(request, pk):
+	student = Student.objects.filter(id=pk)
 	if request.method == 'POST':
 		# create a form instance and populate it with data from the request:
 		form = CourseForm(request.POST)
@@ -58,20 +59,31 @@ def get_courses(request, pk):
 		if form.is_valid():
 			# process the data in form.cleaned_data as required
 			course_list = request.POST.getlist('classes')
-			id_list = []
-			for course in course_list:
-				id_list.append(course.id)
-			print(course_list)
-			print(id_list)
+			string = ""
+			for id in course_list:
+			    string += str(id)
+			    string += ','
 			# redirect to a new URL:
-			return HttpResponseRedirect(reverse('one:meetings', args=(id_list,)))
-	# if a GET (or any other method) we'll create a blank form
+			return HttpResponseRedirect('meetings/' + string)
+	     # if a GET (or any other method) we'll create a blank form
 	else:
 		form = CourseForm()
 		return render(request, 'one/detail.html', {'form': form})
 
-
-
+def get_details(request, pk, course_list):
+	# if this is a POST request we need to process the form data
+	if request.method == 'POST':
+		# create a form instance and populate it with data from the request:
+		form = StudentForm(request.POST)
+		# check whether it's valid:
+		if form.is_valid():
+			#
+			# redirect to a new URL:
+			return HttpResponseRedirect(reverse('one:results', args=(student_object.id,)))
+	# if a GET (or any other method) we'll create a blank form 
+	else:
+		student = Student.objects.filter(id=pk)
+		return render(request, 'meetings.html', {'student': student})
 
 def get_data(request):
 	# if this is a POST request we need to process the form data

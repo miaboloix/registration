@@ -31,6 +31,7 @@ class StudentForm(ModelForm):
 		model = Student
 		fields = ['hopid', 'jhed', 'major', 'grad_year', 'pre_health']
 
+
 class Course(models.Model):
 	name = models.CharField(max_length=200)
 	prof = models.CharField(max_length=200)
@@ -38,6 +39,11 @@ class Course(models.Model):
 
 	def __str__(self):
 		return self.name + ' with Professor ' + self.prof
+
+class CourseForm(ModelForm):
+	class Meta:
+		model = Course
+		fields = ['name', 'code']
 
 class Meeting(models.Model):
 	course = models.ForeignKey(Course, on_delete=models.CASCADE)
