@@ -82,8 +82,16 @@ def get_details(request, pk, course_list):
 			return HttpResponseRedirect(reverse('one:results', args=(student_object.id,)))
 	# if a GET (or any other method) we'll create a blank form 
 	else:
-		student = Student.objects.filter(id=pk)
-		return render(request, 'meetings.html', {'student': student})
+		student = get_object_or_404(Student, pk=pk)
+		course_list = course_list.split(',')
+		print(course_list)
+		object_course_list = []
+		for id in course_list:
+			if id != '':
+				course, created = Course.objects.get_or_create(id=id)
+				if not created:
+					object_course_list.append(course)
+		return render(request, 'one/meetings.html', context={'student': student, 'courses': object_course_list})
 
 def get_data(request):
 	# if this is a POST request we need to process the form data

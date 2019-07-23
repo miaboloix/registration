@@ -3,8 +3,12 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Meetings</title>
-     {% load static %}
 </head>
 <body>
+<h1>Meetings page</h1>
+<h1>Hello, {{ student.jhed }}</h1>
+{% for course in courses %}
+	<h1>{{ course.name }}</h1><br>
+{% endfor %}
 </body>
 </html>
