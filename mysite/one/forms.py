@@ -25,4 +25,7 @@ class StudentForm(forms.Form):
 	#TODO: add 'is valid' function
 
 class CourseForm(forms.Form):
-   classes = forms.ModelMultipleChoiceField(required=True, widget=forms.CheckboxSelectMultiple, queryset= Course.objects.all(), to_field_name="id" )
+	classes = forms.ModelMultipleChoiceField(required=True, widget=forms.CheckboxSelectMultiple, queryset= Course.objects.all(), to_field_name="id" )
+
+
+

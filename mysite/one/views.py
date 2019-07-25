@@ -32,6 +32,10 @@ class ResultsView(generic.DetailView):
 	model = Student
 	template_name = 'one/results.html'
 
+class RegisterMeetingsView(generic.DetailView):
+	model = Meeting
+	template_name = 'one/register_results.html'
+
 def vote(request, question_id):
 	question = get_object_or_404(Question, pk=question_id)
 	try:
@@ -71,27 +75,33 @@ def get_courses(request, pk):
 		return render(request, 'one/detail.html', {'form': form})
 
 def get_details(request, pk, course_list):
-	# if this is a POST request we need to process the form data
+	student = get_object_or_404(Student, pk=pk)
+	course_list = course_list.split(',')
 	if request.method == 'POST':
-		# create a form instance and populate it with data from the request:
-		form = StudentForm(request.POST)
-		# check whether it's valid:
-		if form.is_valid():
-			#
-			# redirect to a new URL:
-			return HttpResponseRedirect(reverse('one:results', args=(student_object.id,)))
-	# if a GET (or any other method) we'll create a blank form 
-	else:
-		student = get_object_or_404(Student, pk=pk)
-		course_list = course_list.split(',')
-		print(course_list)
-		object_course_list = []
+		meetings = []
+		full_meetings = []
 		for id in course_list:
 			if id != '':
-				course, created = Course.objects.get_or_create(id=id)
-				if not created:
-					object_course_list.append(course)
-		return render(request, 'one/meetings.html', context={'student': student, 'courses': object_course_list})
+				data = request.POST[id]
+				meeting, created_meeting = Meeting.objects.get_or_create(id=data)
+				if not created_meeting:
+					if meeting.enrollment < meeting.max:
+						meetings.append(meeting)
+						meeting.students.add(student)
+					else:
+						full_meetings.append(meeting)
+						meeting.waitlist.add(student)
+		return render(request, 'one/register_results.html/', context={"student": student, "meetings": meetings, "full_meetings": full_meetings})
+	else:
+		object_meetings_dict = {}
+		for id in course_list:
+			if id != '':
+				course, created_course = Course.objects.get_or_create(id=id)
+				if not created_course:
+					meetings = Meeting.objects.filter(course=course)
+					meetings = list(meetings)
+					object_meetings_dict[course] = meetings
+		return render(request, 'one/meetings.html/', context={'student': student, 'meetings': object_meetings_dict})
 
 def get_data(request):
 	# if this is a POST request we need to process the form data
@@ -114,3 +124,21 @@ def get_data(request):
 	else:
 		form = StudentForm()
 		return render(request, 'index.html', {'form': form})
+
+def get_wait_details(request, pk, course_list):
+	student = get_object_or_404(Student, pk=pk)
+	course_list = course_list.split(',')
+	if request.method == 'POST':
+		object_meetings_dict = {}
+		for id in course_list:
+			if id != '':
+				course, created_course = Course.objects.get_or_create(id=id)
+				if not created_course:
+					meetings = Meeting.objects.filter(course=course)
+					meetings = list(meetings)
+					for meeting in meetings:
+						if meeting.waitlist.filter(id=pk).exists():
+							#meeting.waitlist.remove(student)
+							meetings.remove(meeting)
+							object_meetings_dict[course] = meetings
+		return render(request, 'one/meetings.html/', context={'student': student, 'meetings': object_meetings_dict})

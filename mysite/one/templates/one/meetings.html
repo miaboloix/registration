@@ -5,10 +5,18 @@
 	<title>Meetings</title>
 </head>
 <body>
-<h1>Meetings page</h1>
-<h1>Hello, {{ student.jhed }}</h1>
-{% for course in courses %}
-	<h1>{{ course.name }}</h1><br>
-{% endfor %}
+	<h1>Hello, {{ student.jhed }}! These are the PILOT meeting times associated with the courses you chose.</h1>
+	<form action="register/" method="post" class="meetings_form">
+		{% csrf_token %}
+		{% for course, meeting in meetings.items %}
+			<h1>{{ course }}</h1>
+			<ul>
+			{% for time in meeting %}
+					<li><input type="radio" name="{{course.id}}" value="{{time.id}}">{{ time }}</li>
+			{% endfor %}
+			</ul>
+		{% endfor %}
+		<input type="submit" value="Submit">
+	</form>
 </body>
 </html>
