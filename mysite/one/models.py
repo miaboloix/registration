@@ -4,13 +4,13 @@ from django.db import models
 from django.utils import timezone
 from django.forms import ModelForm
 
-DAYS = [('MON', 'Monday'),
-        ('TUES', 'Tuesday'),
-        ('WED', 'Wednesday'),
-        ('THURS', 'Thursday'),
-        ('FRI', 'Friday'),
-        ('SAT', 'Saturday'),
-        ('SUN', 'Sunday')]
+DAYS = [('Monday', 'MON'),
+        ('Tuesday','TUES'),
+        ('Wednesday','WED'),
+        ('Thursday','THURS'),
+        ('Friday','FRI'),
+        ('Saturday','SAT'),
+        ('Sunday','SUN')]
 
 GRAD_YEAR_CHOICES = ['2020', '2021', '2022', '2023', '2024']
 
@@ -47,14 +47,16 @@ class CourseForm(ModelForm):
 
 class Meeting(models.Model):
 	course = models.ForeignKey(Course, on_delete=models.CASCADE)
-	start_time = models.TimeField('start time')
-	end_time = models.TimeField('end time')
-	day = models.CharField(max_length=5)
-	max = models.IntegerField(default=0)
-	students = models.ManyToManyField(Student)
+	start_time = models.CharField(max_length=15)
+	end_time = models.CharField(max_length=15)
+	day = models.CharField(max_length=10, choices=DAYS)
+	max = models.IntegerField(default=15)
+	enrollment = models.IntegerField(default=0)
+	waitlist = models.ManyToManyField(Student, blank=True, related_name="meeting_waitlist")
+	students = models.ManyToManyField(Student, blank=True, related_name="meeting_students")
 
 	def __str__(self):
-		return self.day + ' from ' + str(self.start_time) + ' to ' + str(self.end_time)
+		return "Day: %s, Time: %s - %s" % (self.day, self.start_time, self.end_time)
 
 
 class Question(models.Model):
