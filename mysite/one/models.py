@@ -3,6 +3,9 @@ import datetime
 from django.db import models
 from django.utils import timezone
 from django.forms import ModelForm
+from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 DAYS = [('Monday', 'MON'),
         ('Tuesday','TUES'),
@@ -16,7 +19,8 @@ GRAD_YEAR_CHOICES = ['2020', '2021', '2022', '2023', '2024']
 
 MAJOR_CHOICES = ['Undecided', 'Africana Studies', 'Anthropology', 'Applied Mathematics & Statistics','Archaeology','Behavioral Biology','Biology','Biomedical Engineering','Biophysics','Chemical & Biomolecular Engineering','Chemistry','Civil Engineering','Classics','Cognitive Science','Computer Engineering','Computer Science','Earth & Planetary Sciences','East Asian Studies','Economics','Electrical Engineering','Engineering Mechanics','English','Environmental Engineering','Environmental Science','Environmental Studies','Film & Media Studies','French','General Engineering','German','History','History of Art','History of Science, Medicine & Technology','Interdisciplinary Studies','International Studies','Italian','Materials Science & Engineering','Mathematics','Mechanical Engineering','Medicine, Science & the Humanities','Molecular & Cellular Biology','Natural Sciences','Near Eastern Studies','Neuroscience','Philosophy','Physics','Political Science','Psychology','Public Health Studies','Romance Languages','Sociology','Spanish','Writing Seminars']
 
-class Student(models.Model):
+class StudentUser(models.Model):
+	user = models.OneToOneField(User, on_delete=models.CASCADE)
 	hopid = models.CharField(max_length=200)
 	jhed = models.CharField(max_length=200)
 	major = models.CharField(max_length=100)
@@ -28,7 +32,7 @@ class Student(models.Model):
 
 class StudentForm(ModelForm):
 	class Meta:
-		model = Student
+		model = StudentUser
 		fields = ['hopid', 'jhed', 'major', 'grad_year', 'pre_health']
 
 
@@ -52,8 +56,8 @@ class Meeting(models.Model):
 	day = models.CharField(max_length=10, choices=DAYS)
 	max = models.IntegerField(default=15)
 	enrollment = models.IntegerField(default=0)
-	waitlist = models.ManyToManyField(Student, blank=True, related_name="meeting_waitlist")
-	students = models.ManyToManyField(Student, blank=True, related_name="meeting_students")
+	waitlist = models.ManyToManyField(StudentUser, blank=True, related_name="meeting_waitlist")
+	students = models.ManyToManyField(StudentUser, blank=True, related_name="meeting_students")
 
 	def __str__(self):
 		return "Day: %s, Time: %s - %s" % (self.day, self.start_time, self.end_time)

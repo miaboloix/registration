@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>PILOT Registration</title>
-	{% load static %}
-</head>
-<body>
-<h1>Tell us about yourself!</h1>
-<form action="get_data/" method="post">
+{% extends "one/base.html" %}
+{% block content %}
+<h1>Hey, {{ user.username }}! Tell us about yourself!</h1>
+<form method="post">
 	{% csrf_token %}
 	<ul>
-
 		<li><tr><th><label for="id_hopid">Hopid:</label></th><td><input type="text" name="hopid" required id="id_hopid"></td></tr></li>
 		<li><tr><th><label for="id_jhed">Jhed:</label></th><td><input type="text" name="jhed" required id="id_jhed"></td></tr></li>
 		<li><tr><th><label for="id_major">Major:</label></th><td><select name="major" required id="id_major">
@@ -80,6 +73,4 @@
 		<input type="submit" value="Submit">
 	</ul>
 </form>
-
-</body>
-</html>
+{% endblock content %}

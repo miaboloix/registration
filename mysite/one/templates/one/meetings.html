@@ -1,22 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Meetings</title>
-</head>
-<body>
-	<h1>Hello, {{ student.jhed }}! These are the PILOT meeting times associated with the courses you chose.</h1>
-	<form action="register/" method="post" class="meetings_form">
+{% extends "one/base.html" %}
+{% block content %}
+<h1>Hello, {{ student.jhed }}! These are the PILOT meeting times associated with the courses you chose.</h1>
+	<form action="get_details/" method="post" class="meetings_form">
 		{% csrf_token %}
 		{% for course, meeting in meetings.items %}
 			<h1>{{ course }}</h1>
 			<ul>
 			{% for time in meeting %}
-					<li><input type="radio" name="{{course.id}}" value="{{time.id}}">{{ time }}</li>
+					<li><input type="radio" name="{{course.id}}" value="{{time.id}}">
+						{{ time }}
+						{% if time.enrollment >= time.max %}
+						- *WAITLIST ONLY*
+						{% endif %}
+					</li>
 			{% endfor %}
 			</ul>
 		{% endfor %}
 		<input type="submit" value="Submit">
 	</form>
-</body>
-</html>
+{% endblock content%}

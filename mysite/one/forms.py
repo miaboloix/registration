@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from one.models import Student, Course, StudentForm, CourseForm
+from one.models import StudentUser, Course, StudentForm, CourseForm
 
 from django import forms
 

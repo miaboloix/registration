@@ -1,26 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Title</title>
-	{% load static %}
-</head>
-<body>
+{% extends "one/base.html" %}
+{% block content %}
 <h1>Hello, {{student.jhed }}</h1>
 <h2>Here are the PILOT sections you have selected! </h2>
 <h2>Please verify that all your data is correct! </h2>
 <h2>It is very important that we receive accurate information throughout the registration process.</h2>
 <h3>You were SUCCESSFULLY placed in the following PILOT sections: </h3>
 	<ul>
-		{% for time in meetings %}
+		{% for time in vacant %}
 		<li><b>Course: </b>{{ time.course }}</li>
 		<li><b>Meeting: </b>{{ time }}</li>
 		{% endfor %}
 	</ul>
 <h3>You were WAITLISTED for the following PILOT sections: </h3>
-<h3>If you would like to register for a different time slot for the following courses, you can click the back button to select again. </h3>
 <ul>
-	{% for time in full_meetings %}
+	{% for time in full %}
 	<li><b>Course: </b>{{ time.course }}</li>
 	<li><b>Meeting: </b>{{ time }}</li>
 	{% endfor %}
@@ -29,6 +22,4 @@
 <h3>You will receive an email confirmation to {{student.jhed}}@jhu.edu with your registration results.</h3>
 <h4>If you have concerns, please reach out to Ariane Kelly at example@jhu.edu</h4>
 
-
-</body>
-</html>
+{% endblock content %}
