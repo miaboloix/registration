@@ -71,13 +71,14 @@ def get_details(request, pk, course_list):
 				course_string += str(id) + "%"
 				if Meeting.objects.filter(course=get_object_or_404(Course, pk=str(id))).exists():
 					data = request.POST[id]
+					print(data)
 					meeting = get_object_or_404(Meeting, pk=data)
 					if meeting.enrollment < meeting.max:
 						vacant_string += data + "%"
-						meeting.students.add(student)
+						#meeting.students.add(student)
 					else:
 						full_string += data + "%"
-						meeting.waitlist.add(student)
+						#meeting.waitlist.add(student)
 		return redirect('one:register_results', pk=student.id, course_list=course_string, vacant=vacant_string, full=full_string)
 	else:
 		object_meetings_dict = {}
