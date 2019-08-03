@@ -1,22 +1,9 @@
 {% extends "one/base.html" %}
 {% block content %}
 <div class="content-section">
-	<form method="post">
-		{% csrf_token %}
-		<fieldset>
-			<legend>
-				Log Out:
-			</legend>
-			{{ form.as_p }}
-		</fieldset>
-		<div>
-			<button type="submit">Log Out</button>
-		</div>
-	</form>
-	<div>
+<h2>You have been logged out. </h2>
 		<small>
-			Don't have an account? <a href="{% url 'one:sign_in' %}">Create an Account</a>
+			<a href="{% url 'one:login' %}">Log back in</a>
 		</small>
-	</div>
 </div>
 {% endblock content %}

@@ -10,6 +10,7 @@ def create_user(request):
 			form.save()
 			username = form.cleaned_data.get('username')
 			messages.success(request, 'Account Created for {0}!'.format(username))
+			messages.success(request, 'You are now logged in.')
 			user = User.objects.filter(username=username).first()
 			print(user.id)
 			return redirect('one:data', user=user.id)
