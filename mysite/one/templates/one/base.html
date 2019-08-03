@@ -27,13 +27,13 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarToggle">
 				<div class="navbar-nav mr-auto">
-					<a class="nav-item nav-link" href="">Home</a>
+					<a class="nav-item nav-link" href="{% url 'one:home' %}">Home</a>
 					<a class="nav-item nav-link" href="#">About</a>
 				</div>
 				<!-- Navbar Right Side -->
 				<div class="navbar-nav">
-					<a class="nav-item nav-link" href="#">Login</a>
-					<a class="nav-item nav-link" href="signin/">Register</a>
+					<a class="nav-item nav-link" href="{% url 'one:login' %}">Login</a>
+					<a class="nav-item nav-link" href="{% url 'one:sign_in' %}">Create an Account</a>
 				</div>
 			</div>
 		</div>
