@@ -1,25 +1,37 @@
 {% extends "one/base.html" %}
 {% block content %}
-<h1>Hello, {{student.jhed }}</h1>
-<h2>Here are the PILOT sections you have selected! </h2>
-<h2>Please verify that all your data is correct! </h2>
-<h2>It is very important that we receive accurate information throughout the registration process.</h2>
-<h3>You were SUCCESSFULLY placed in the following PILOT sections: </h3>
+<div class="content-section">
+<h1>Hello, {{student.jhed }}!</h1>
+<h5>Here are the PILOT sections you have selected! </h5><br>
+<h4>You were <b>successfully</b> enrolled in the following PILOT sections: </h4>
 	<ul>
 		{% for time in vacant %}
-		<li><b>Course: </b>{{ time.course }}</li>
-		<li><b>Meeting: </b>{{ time }}</li>
+		<div class="article-metadata">
+		<li><b>Course: </b>{{ time.course }}<br><b>PILOT Meeting: </b>{{ time }}</li>
+		</div>
 		{% endfor %}
 	</ul>
-<h3>You were WAITLISTED for the following PILOT sections: </h3>
+	<br>
+<h4>You were <b>waitlisted</b> for the following PILOT sections: </h4>
+{% if full.len > 0 %}
 <ul>
 	{% for time in full %}
-	<li><b>Course: </b>{{ time.course }}</li>
-	<li><b>Meeting: </b>{{ time }}</li>
+	<div class="article-metadata">
+		<li><b>Course: </b>{{ time.course }}<br><b>PILOT Meeting: </b>{{ time }}</li>
+	</div>
 	{% endfor %}
 </ul>
-
-<h3>You will receive an email confirmation to {{student.jhed}}@jhu.edu with your registration results.</h3>
-<h4>If you have concerns, please reach out to Ariane Kelly at example@jhu.edu</h4>
-
+{% else %}
+	<ul>
+		<li class="article-metadata">You are not waitlisted for any sections.</li><br>
+	</ul>
+{% endif %}
+	<br>
+	<form method="post">
+		{% csrf_token %}
+		<input type="submit" value="Confirm">
+	</form>
+	<h5>You will receive an email confirmation to <b>{{student.jhed}}@jhu.edu</b> with your registration results.</h5><br>
+<small>If you have concerns, please reach out to Ariane Kelly at <b>example@jhu.edu</b></small><br>
+</div>
 {% endblock content %}

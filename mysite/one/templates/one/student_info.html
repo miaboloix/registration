@@ -1,6 +1,6 @@
 {% extends "one/base.html" %}
 {% block content %}
-<h1>Hey, {{ user.username }}! Tell us about yourself!</h1>
+<h1>Hey, {{ user }}! Tell us about yourself!</h1>
 <form method="post">
 	{% csrf_token %}
 	<ul>

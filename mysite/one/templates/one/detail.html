@@ -1,5 +1,6 @@
 {% extends "one/base.html" %}
 {% block content %}
+<div class="content-section">
 <h1>Take a look at the PILOT-supported courses below and select all the course/professor pairs you would like to register for! </h1>
 <form action="get_courses/" method="post">
 	{% csrf_token %}
@@ -119,4 +120,5 @@
 	</ul></td></tr>
 	<input type="submit" value="Submit">
 </form>
+</div>
 {% endblock content %}

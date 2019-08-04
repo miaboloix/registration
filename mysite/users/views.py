@@ -11,9 +11,10 @@ def create_user(request):
 			username = form.cleaned_data.get('username')
 			messages.success(request, 'Account Created for {0}!'.format(username))
 			messages.success(request, 'You are now logged in.')
-			user = User.objects.filter(username=username).first()
-			print(user.id)
-			return redirect('one:data', user=user.id)
+			return redirect('one:data')
 	else:
 		form = UserCreationForm()
-	return render(request, 'users/create_user.html/', {'form': form})
+	return render(request, 'users/create_user.html', {'form': form})
+
+def profile(request):
+	return render(request, 'users/profile.html')
