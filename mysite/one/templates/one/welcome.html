@@ -1,0 +1,23 @@
+{% extends "one/base.html" %}
+{% block content %}
+<div class="content-section">
+	<form method="post">
+		{% csrf_token %}
+		<fieldset>
+			<legend>
+				Welcome to PILOT Registration!
+			</legend>
+			<h5>Create an account in order to register for sections, keep up with the status of your enrollments, and more!</h5>
+		</fieldset>
+		{% if user.is_authenticated %}
+		<div>
+			<button type="submit">Begin Registration!</button>
+		</div>
+		{% else %}
+		<div>
+			<button type="submit" disabled>You are not logged in!</button>
+		</div>
+		{% endif %}
+	</form>
+</div>
+{% endblock content %}

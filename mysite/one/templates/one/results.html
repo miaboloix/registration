@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Title</title>
-	{% load static %}
-</head>
-<body>
+{% extends "one/base.html" %}
+{% block content %}
+<div class="content-section">
 <h1>Hello, {{ student.jhed }}</h1>
-<h2>Here is the information you have provided! </h2>
-<h2>Please verify that all your data is correct! </h2>
-<h2>It is very important that we receive accurate information throughout the registration process.</h2>
+<h4>Here is the information you have provided! </h4>
+<h4>Please verify that all your data is correct! </h4>
+<h4>It is very important that we receive accurate information throughout the registration process.</h4>
 
 <ul>
 	<li><b>HOPID:</b> {{student.hopid}}</li>
@@ -18,9 +13,6 @@
 	<li><b>Graduation Year:</b> {{student.grad_year}}</li>
 	<li><b>Pre-Health:</b> {{student.pre_health}}</li>
 </ul>
-
-<a href="{% url 'one:index' %}">Not correct?</a>
-<a href="{% url 'one:detail' student.id %}">Correct?</a>
-
-</body>
-</html>
+<a href="{% url 'one:detail' student.id %}">Ok</a>
+</div>
+{% endblock content %}
