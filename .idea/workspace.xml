@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40fb63fe-64f6-46c3-b67d-bd8889752417" name="Default Changelist" comment="">
+<<<<<<< Updated upstream
       <change afterPath="$PROJECT_DIR$/mysite/one/templates/one/status.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/mysite/one/templates/one/welcome.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/mysite/users/templates/users/profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
+>>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/django" beforeDir="false" afterPath="$PROJECT_DIR$/django" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/django/django/conf/project_template/project_name/urls.py-tpl" beforeDir="false" afterPath="$PROJECT_DIR$/django/django/conf/project_template/project_name/urls.py-tpl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/django/django/contrib/admindocs/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/django/django/contrib/admindocs/urls.py" afterDir="false" />
@@ -17,6 +20,7 @@
       <change beforePath="$PROJECT_DIR$/django/tests/template_tests/test_engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/django/tests/template_tests/test_engine.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/django/tests/template_tests/test_loaders.py" beforeDir="false" afterPath="$PROJECT_DIR$/django/tests/template_tests/test_loaders.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/django/tests/template_tests/test_origin.py" beforeDir="false" afterPath="$PROJECT_DIR$/django/tests/template_tests/test_origin.py" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/mysite/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/one/templates/one/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/one/templates/one/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/one/templates/one/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/one/templates/one/detail.html" afterDir="false" />
@@ -28,6 +32,8 @@
       <change beforePath="$PROJECT_DIR$/mysite/one/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/one/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/one/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/one/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/users/views.py" afterDir="false" />
+=======
+>>>>>>> Stashed changes
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,8 +61,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mysite/one/urls.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="80">
               <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+=======
+            <state relative-caret-position="1564">
+              <caret line="68" column="9" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
+>>>>>>> Stashed changes
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -65,6 +76,7 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+<<<<<<< Updated upstream
         <entry file="file://$PROJECT_DIR$/mysite/one/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="322">
@@ -72,15 +84,11 @@
               <folding>
                 <element signature="e#0#44#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mysite/one/templates/one/results.html">
+=======
+        <entry file="file://$PROJECT_DIR$/mysite/one/templates/one/meetings.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+            <state relative-caret-position="184">
+              <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -88,35 +96,96 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mysite/one/templates/one/detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="122" column="6" selection-start-line="122" selection-start-column="6" selection-end-line="122" selection-end-column="6" />
+            <state relative-caret-position="184">
+              <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="26" />
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mysite/one/templates/one/results.html">
+          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
+            <state relative-caret-position="138">
+              <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+=======
+            <state relative-caret-position="506">
+              <caret line="22" selection-start-line="22" selection-end-line="22" selection-end-column="56" />
+>>>>>>> Stashed changes
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+<<<<<<< Updated upstream
+        <entry file="file://$PROJECT_DIR$/mysite/one/templates/one/detail.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="287">
+              <caret line="122" column="6" selection-start-line="122" selection-start-column="6" selection-end-line="122" selection-end-column="6" />
+=======
+        <entry file="file://$PROJECT_DIR$/mysite/one/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="598">
+              <caret line="27" column="148" selection-start-line="27" selection-start-column="148" selection-end-line="27" selection-end-column="148" />
+              <folding>
+                <element signature="e#0#34#0" expanded="true" />
+              </folding>
+>>>>>>> Stashed changes
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+<<<<<<< Updated upstream
         <entry file="file://$PROJECT_DIR$/mysite/one/templates/one/status.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="80">
               <caret line="21" column="20" lean-forward="true" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+=======
+        <entry file="file://$PROJECT_DIR$/mysite/mysite/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="805">
+              <caret line="35" column="26" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< Updated upstream
         <entry file="file://$PROJECT_DIR$/mysite/one/templates/one/register_results.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="172">
               <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+=======
+        <entry file="file://$PROJECT_DIR$/mysite/one/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1127">
+              <caret line="52" column="40" selection-start-line="52" selection-start-column="40" selection-end-line="52" selection-end-column="40" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< Updated upstream
         <entry file="file://$PROJECT_DIR$/mysite/one/templates/one/meetings.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="114">
               <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+=======
+        <entry file="file://$PROJECT_DIR$/mysite/one/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="65" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
@@ -204,11 +273,14 @@
             <path>
               <item name="registration" type="b2602c69:ProjectViewProjectNode" />
               <item name="registration" type="462c0819:PsiDirectoryNode" />
+<<<<<<< Updated upstream
               <item name="django" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="registration" type="b2602c69:ProjectViewProjectNode" />
               <item name="registration" type="462c0819:PsiDirectoryNode" />
+=======
+>>>>>>> Stashed changes
               <item name="mysite" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -228,6 +300,7 @@
               <item name="registration" type="462c0819:PsiDirectoryNode" />
               <item name="mysite" type="462c0819:PsiDirectoryNode" />
               <item name="one" type="462c0819:PsiDirectoryNode" />
+<<<<<<< Updated upstream
               <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -237,6 +310,9 @@
               <item name="one" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="one" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+>>>>>>> Stashed changes
             </path>
             <path>
               <item name="registration" type="b2602c69:ProjectViewProjectNode" />
@@ -253,6 +329,7 @@
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="one" type="462c0819:PsiDirectoryNode" />
             </path>
+<<<<<<< Updated upstream
             <path>
               <item name="registration" type="b2602c69:ProjectViewProjectNode" />
               <item name="registration" type="462c0819:PsiDirectoryNode" />
@@ -281,6 +358,8 @@
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="users" type="462c0819:PsiDirectoryNode" />
             </path>
+=======
+>>>>>>> Stashed changes
           </expand>
           <select />
         </subPane>
@@ -340,8 +419,13 @@
     </configuration>
     <recent_temporary>
       <list>
+<<<<<<< Updated upstream
         <item itemvalue="JavaScript Debug.meetings.html" />
         <item itemvalue="Python.0003_course_code" />
+=======
+        <item itemvalue="Python.0003_course_code" />
+        <item itemvalue="JavaScript Debug.meetings.html" />
+>>>>>>> Stashed changes
       </list>
     </recent_temporary>
   </component>
@@ -366,6 +450,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< Updated upstream
     <option name="totallyTimeSpent" value="103095000" />
   </component>
   <component name="TodoView">
@@ -376,6 +461,9 @@
       <are-packages-shown value="true" />
       <is-autoscroll-to-source value="true" />
     </todo-panel>
+=======
+    <option name="totallyTimeSpent" value="28515000" />
+>>>>>>> Stashed changes
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -400,7 +488,11 @@
       <window_info anchor="bottom" id="Docker" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5016155" side_tool="true" weight="0.32896653" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
+<<<<<<< Updated upstream
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32896653" />
+=======
+      <window_info anchor="bottom" id="Version Control" order="11" visible="true" weight="0.32896653" />
+>>>>>>> Stashed changes
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -495,6 +587,7 @@
     </ignored-roots>
   </component>
   <component name="editorHistoryManager">
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/django/django/bin/django-admin.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -514,6 +607,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/django/django/contrib/admin/templates/admin/login.html">
+=======
+    <entry file="file://$PROJECT_DIR$/mysite/one/migrations/__init__.py">
+>>>>>>> Stashed changes
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/django/django/contrib/admin/templates/admin/index.html">
@@ -594,6 +690,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/django/django/apps/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -614,6 +711,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mysite/mysite/__init__.py">
+=======
+    <entry file="file://$PROJECT_DIR$/mysite/one/__init__.py">
+>>>>>>> Stashed changes
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/mysite/mysite/asgi.py">
@@ -629,6 +729,7 @@
     <entry file="file://$PROJECT_DIR$/mysite/one/apps.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/mysite/users/apps.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -647,10 +748,29 @@
         <state>
           <folding>
             <element signature="e#0#15#0" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/mysite/one/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/one/templates/one/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/one/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1564">
+          <caret line="68" column="9" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+>>>>>>> Stashed changes
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/django/django/contrib/admin/widgets.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2164" />
@@ -681,11 +801,18 @@
           <folding>
             <element signature="e#53#88#0" expanded="true" />
           </folding>
+=======
+    <entry file="file://$PROJECT_DIR$/mysite/one/templates/one/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="26" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/one/models.py">
+    <entry file="file://$PROJECT_DIR$/mysite/one/templates/one/results.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="155">
           <caret line="59" column="77" selection-start-line="59" selection-start-column="77" selection-end-line="59" selection-end-column="77" />
           <folding>
@@ -706,10 +833,24 @@
           <caret line="116" selection-start-line="116" selection-end-line="116" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
+=======
+        <state relative-caret-position="506">
+          <caret line="22" selection-start-line="22" selection-end-line="22" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/one/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="27" column="148" selection-start-line="27" selection-start-column="148" selection-end-line="27" selection-end-column="148" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+>>>>>>> Stashed changes
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/mysite/one/templates/one/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
@@ -730,10 +871,26 @@
           <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
           <folding>
             <element signature="e#2#34#0" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/mysite/mysite/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="805">
+          <caret line="35" column="26" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/one/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1127">
+          <caret line="52" column="40" selection-start-line="52" selection-start-column="40" selection-end-line="52" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+>>>>>>> Stashed changes
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/mysite/one/static/one/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -831,6 +988,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+=======
+    <entry file="file://$PROJECT_DIR$/mysite/one/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="65" />
+>>>>>>> Stashed changes
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
@@ -838,6 +1001,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mysite/one/templates/one/meetings.html">
+<<<<<<< Updated upstream
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
           <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
@@ -865,6 +1029,11 @@
           <folding>
             <element signature="e#0#44#0" expanded="true" />
           </folding>
+=======
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
