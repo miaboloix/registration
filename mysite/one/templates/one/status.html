@@ -1,31 +1,41 @@
 {% extends "one/base.html" %}
 {% block content %}
-<div class="content-section">
-	<h1>Hello, {{student.jhed }}!</h1>
-	<h4>Enrolled sections:</h4>
-	<ul>
-		{% for meeting in enrolled %}
-		<div class="article-metadata">
-			<li><b>Course: </b>{{ meeting.course }}<br><b>PILOT Meeting: </b>{{ meeting }}</li>
-		</div>
-		{% endfor %}
-	</ul>
-	<br>
+	<div class="content-section">
+		<h1>Hello, {{student.jhed }}!</h1>
 
-	<h4>Waitlisted sections:</h4>
-	{% if full.len > 0 %}
-	<ul>
-		{% for meeting in waitlist %}
-		<div class="article-metadata">
-			<li><b>Course: </b>{{ meeting.course }}<br><b>PILOT Meeting: </b>{{ meeting }}</li>
-		</div>
-		{% endfor %}
-	</ul>
-	{% else %}
-	<ul>
-		<li class="article-metadata">You are not waitlisted for any sections.</li><br>
-	</ul>
-	{% endif %}
-	<br>
-</div>
+		<h4>Enrolled sections:</h4>
+		{% if enrolled.len > 0 %}
+			<ul>
+				{% for meeting in enrolled %}
+					<div class="article-metadata">
+						<li><b>Course: </b>{{ meeting.course }}<br><b>PILOT Meeting: </b>{{ meeting }}</li>
+					</div>
+				{% endfor %}
+			</ul>
+		{% else %}
+			<ul>
+				<li class="article-metadata">You are not enrolled in any sections.</li><br>
+			</ul>
+			<form method="post">
+				{% csrf_token %}
+				<button type="submit">Continue Registration</button>
+			</form>
+		{% endif %}<br>
+
+		<h4>Waitlisted sections:</h4>
+		{% if waitlist.len > 0 %}
+			<ul>
+				{% for meeting in waitlist %}
+					<div class="article-metadata">
+						<li><b>Course: </b>{{ meeting.course }}<br><b>PILOT Meeting: </b>{{ meeting }}</li>
+					</div>
+				{% endfor %}
+			</ul>
+		{% else %}
+			<ul>
+				<li class="article-metadata">You are not waitlisted for any sections.</li><br>
+			</ul>
+		{% endif %}
+		<br>
+	</div>
 {% endblock content%}

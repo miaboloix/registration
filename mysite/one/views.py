@@ -12,7 +12,10 @@ from django.contrib.auth.decorators import login_required
 def welcome(request):
 	if request.method == 'POST':
 		user = request.user.id
-		return redirect('one:data')
+		context = {
+			'title': 'Welcome | PILOT Registration'
+		}
+		return redirect('one:data', context=context)
 	else:
 		if StudentUser.objects.filter(user=request.user.id).exists():
 			return redirect('one:status')
@@ -46,8 +49,11 @@ def get_data(request):
 	else:
 		form = StudentForm()
 		user = request.user
-		print(user.username)
-		return render(request, 'one/student_info.html/', context={'user': user.username})
+		context = {
+			'title': 'Student Information | PILOT Registration',
+			'user': user.username
+		}
+		return render(request, 'one/student_info.html/', context=context)
 
 @login_required
 def get_results(request, pk):
@@ -57,13 +63,22 @@ def get_results(request, pk):
 			return redirect('one:detail', pk=student.id)
 	# if a GET (or any other method) we'll create a blank form
 	else:
-		return render(request, 'one/results.html/', context={'student': student})
+		context = {
+			'title': 'Your Information | PILOT Registration',
+			'student': student
+		}
+		return render(request, 'one/results.html/', context=context)
 
 @login_required
 def details(request, pk):
 	student = StudentUser.objects.filter(id=pk).first()
 	courses = Course.objects.all()
-	return render(request, 'one/detail.html/', context={'student': student, 'course_list': courses})
+	context = {
+		'title': 'Courses | PILOT Registration',
+		'student': student,
+		'course_list': courses
+	}
+	return render(request, 'one/detail.html/', context=context)
 
 @login_required
 def get_courses(request, pk):
@@ -115,6 +130,7 @@ def get_details(request, pk, course_list):
 				meetings = list(meetings)
 				object_meetings_dict[course] = meetings
 		context= {
+			'title': 'Meeting Times | PILOT Registration',
 			'student': student,
 			'meetings': object_meetings_dict,
 		}
@@ -148,6 +164,7 @@ def register_results(request, pk, course_list, vacant, full):
 				meeting = get_object_or_404(Meeting, pk=id)
 				full_meetings.append(meeting)
 		context = {
+			'title': 'Registration Results | PILOT Registration',
 			'student' : student,
 			'courses': course_list,
 			'vacant': vacant_meetings,
@@ -157,13 +174,21 @@ def register_results(request, pk, course_list, vacant, full):
 
 @login_required
 def status(request):
-	user = request.user
-	student = get_object_or_404(StudentUser, user=user)
-	enrolled = list(Meeting.objects.filter(students=student))
-	waitlisted = list(Meeting.objects.filter(waitlist=student))
-	context = {
-		'student': student,
-		'enrolled': enrolled,
-		'waitlist': waitlisted
-	}
-	return render(request, 'one/status.html', context=context)
+	if request.method == 'POST':
+		student = get_object_or_404(StudentUser, user=request.user)
+		if not StudentUser.objects.filter(user=request.user.id).exists():
+			return render(request, 'one/welcome.html/')
+		elif not Meeting.objects.filter(students=student).exists() or Meeting.objects.filter(waitlist=student).exists():
+			return redirect('one:results', pk=student.id)
+	else:
+		user = request.user
+		student = get_object_or_404(StudentUser, user=user)
+		enrolled = list(Meeting.objects.filter(students=student))
+		waitlisted = list(Meeting.objects.filter(waitlist=student))
+		context = {
+			'title': 'Your Status | PILOT Registration',
+			'student': student,
+			'enrolled': enrolled,
+			'waitlist': waitlisted
+		}
+		return render(request, 'one/status.html', context=context)
