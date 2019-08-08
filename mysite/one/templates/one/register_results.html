@@ -4,6 +4,7 @@
 <h1>Hello, {{student.jhed }}!</h1>
 <h5>Here are the PILOT sections you have selected! </h5><br>
 <h4>You were <b>successfully</b> enrolled in the following PILOT sections: </h4>
+	{% if vacant|length > 0 %}
 	<ul>
 		{% for time in vacant %}
 		<div class="article-metadata">
@@ -11,9 +12,14 @@
 		</div>
 		{% endfor %}
 	</ul>
+	{% else %}
+	<ul>
+			<li class="article-metadata">You are not enrolled in any sections.</li><br>
+	</ul>
+	{% endif %}
 	<br>
 <h4>You were <b>waitlisted</b> for the following PILOT sections: </h4>
-{% if full.len > 0 %}
+{% if full|length > 0 %}
 <ul>
 	{% for time in full %}
 	<div class="article-metadata">

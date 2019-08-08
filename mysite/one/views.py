@@ -148,7 +148,6 @@ def register_results(request, pk, course_list, vacant, full):
 		course_list = course_list.split('%')
 		vacant = vacant.split('%')
 		full = full.split('%')
-
 		for id in course_list:
 			if id != '':
 				course = get_object_or_404(Course, pk=id)
@@ -184,11 +183,11 @@ def status(request):
 		user = request.user
 		student = get_object_or_404(StudentUser, user=user)
 		enrolled = list(Meeting.objects.filter(students=student))
-		waitlisted = list(Meeting.objects.filter(waitlist=student))
+		waitlist = list(Meeting.objects.filter(waitlist=student))
 		context = {
 			'title': 'Your Status | PILOT Registration',
 			'student': student,
 			'enrolled': enrolled,
-			'waitlist': waitlisted
+			'waitlist': waitlist
 		}
 		return render(request, 'one/status.html', context=context)

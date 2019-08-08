@@ -4,7 +4,7 @@
 		<h1>Hello, {{student.jhed }}!</h1>
 
 		<h4>Enrolled sections:</h4>
-		{% if enrolled.len > 0 %}
+		{% if enrolled|length > 0 %}
 			<ul>
 				{% for meeting in enrolled %}
 					<div class="article-metadata">
@@ -23,7 +23,7 @@
 		{% endif %}<br>
 
 		<h4>Waitlisted sections:</h4>
-		{% if waitlist.len > 0 %}
+		{% if waitlist|length > 0 %}
 			<ul>
 				{% for meeting in waitlist %}
 					<div class="article-metadata">

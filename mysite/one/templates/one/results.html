@@ -2,17 +2,24 @@
 {% block content %}
 <div class="content-section">
 <h1>Hello, {{ student.jhed }}</h1>
-<h4>Here is the information you have provided! </h4>
-<h4>Please verify that all your data is correct! </h4>
-<h4>It is very important that we receive accurate information throughout the registration process.</h4>
-
+<h5>Here is the information you have provided! </h5>
+<h6>Please verify that all your data is correct! </h6>
+<h7>It is very important that we receive accurate information throughout the registration process.</h7>
+<br><br>
 <ul>
+	<li><b>Username:</b> {{user.username}}</li>
 	<li><b>HOPID:</b> {{student.hopid}}</li>
 	<li><b>JHED:</b> {{student.jhed}}</li>
 	<li><b>Major:</b> {{student.major}}</li>
 	<li><b>Graduation Year:</b> {{student.grad_year}}</li>
 	<li><b>Pre-Health:</b> {{student.pre_health}}</li>
-</ul>
-<a href="{% url 'one:detail' student.id %}">Ok</a>
+</ul><br><br>
+	<button>
+	<a style="text-decoration: none; color: darkgreen;" href="{% url 'one:detail' student.id %}">Confirm</a>
+</button>
+	<button>
+		<a style="text-decoration: none; color: darkred;" href="{% url 'one:data' %}">Enter Again</a>
+	</button>
+
 </div>
 {% endblock content %}
