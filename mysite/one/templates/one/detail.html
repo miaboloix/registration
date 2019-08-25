@@ -1,10 +1,12 @@
 {% extends "one/base.html" %}
 {% block content %}
 <div class="content-section">
-<h1>Take a look at the PILOT-supported courses below and select all the course/professor pairs you would like to register for! </h1>
+	<h3>Pick your courses! </h3>
+<p class="text-muted">Take a look at the PILOT-supported courses below and select all the course/professor pairs you would like to register for! <b>Please be sure to select the course with your professor only! </b></p>
+
 <form action="get_courses/" method="post">
 	{% csrf_token %}
-	<tr><th><label>Classes:</label></th><td><ul id="id_classes">
+	<tr><th><label><b>Supported Courses:</b></label></th><td><ul id="id_classes">
 		<li><label for="id_classes_0"><input type="checkbox" name="classes" value="1" id="id_classes_0">
 			Calculus I (Biology and Social Sciences) with Professor C. Sogge</label>
 

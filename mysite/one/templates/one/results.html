@@ -1,25 +1,22 @@
 {% extends "one/base.html" %}
 {% block content %}
 <div class="content-section">
-<h3>Hello, {{ student.jhed }}</h3>
-<h5>Here is the information you have provided! </h5>
-<h6>Please verify that all your data is correct! </h6>
-<h7>It is very important that we receive accurate information throughout the registration process.</h7>
-<br><br>
-<ul>
-	<li><b>Username:</b> {{user.username}}</li>
-	<li><b>HOPID:</b> {{student.hopid}}</li>
-	<li><b>JHED:</b> {{student.jhed}}</li>
-	<li><b>Major:</b> {{student.major}}</li>
-	<li><b>Graduation Year:</b> {{student.grad_year}}</li>
-	<li><b>Pre-Health:</b> {{student.pre_health}}</li>
-</ul><br><br>
-	<button>
-	<a style="text-decoration: none; color: darkgreen;" href="{% url 'one:detail' student.id %}">Confirm</a>
-</button>
-	<button>
-		<a style="text-decoration: none; color: darkred;" href="{% url 'one:data' %}">Enter Again</a>
+	<h3>Hello, {{ student.jhed }}</h3>
+	<p class="text-muted">Here is the information you have provided. Please verify that all your data is correct! It is very important that we receive accurate information throughout the registration process.</p>
+	<ul>
+		<li><b>Username:</b> {{user.username}}</li>
+		<li><b>HOPID:</b> {{student.hopid}}</li>
+		<li><b>JHED:</b> {{student.jhed}}</li>
+		<li><b>Major:</b> {{student.major}}</li>
+		<li><b>Graduation Year:</b> {{student.grad_year}}</li>
+		<li><b>Pre-Health:</b> {{student.pre_health}}</li>
+	</ul><br><br>
+		<button>
+		<a style="text-decoration: none; color: darkgreen;" href="{% url 'one:detail' student.id %}">Confirm</a>
 	</button>
+		<button>
+			<a style="text-decoration: none; color: darkred;" href="{% url 'one:data' %}">Enter Again</a>
+		</button>
 
 </div>
 {% endblock content %}
