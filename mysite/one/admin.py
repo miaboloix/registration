@@ -3,10 +3,7 @@
 from django.contrib import admin
 from django.db import models
 from django import forms
-from .models import Choice, Question, StudentUser, Course, Meeting
-
-admin.site.register(Question)
-admin.site.register(Choice)
+from .models import StudentUser, Course, Meeting
 admin.site.register(StudentUser)
 admin.site.register(Course)
 

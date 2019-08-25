@@ -1,40 +1,42 @@
 {% extends "one/base.html" %}
 {% block content %}
 	<div class="content-section">
-		<h1>Hello, {{student.jhed }}!</h1>
-
-		<h4>Enrolled sections:</h4>
+		<h3>Hello, {{student.jhed }}!</h3>
+		<p class="text-muted"> Here is the status of your current PILOT enrollment requests. If you have any questions or concerns, kindly email Ms. Kelly with your concerns at example@gmail.com. </p>
+		<div class="article-metadata">
+		<h5>Enrolled sections:</h5>
+		</div><br>
 		{% if enrolled|length > 0 %}
-			<ul>
-				{% for meeting in enrolled %}
-					<div class="article-metadata">
-						<li><b>Course: </b>{{ meeting.course }}<br><b>PILOT Meeting: </b>{{ meeting }}</li>
-					</div>
-				{% endfor %}
-			</ul>
+			{% for meeting in enrolled %}
+					<h6 class="stat-course"><b>{{ meeting.course }}</b></h6>
+						<ul>
+							<li><b>Day: </b>{{ meeting.day }}</li>
+							<li><b>Time: </b>{{ meeting.start_time}} - {{meeting.end_time}}</li>
+							<li><b>Location: </b> TBD </li>
+						</ul>
+			{% endfor %}
 		{% else %}
-			<ul>
-				<li class="article-metadata">You are not enrolled in any sections.</li><br>
-			</ul>
+			<h6 class="stat-course"><b>You are not enrolled in any sections.</b></h6>
 			<form method="post">
 				{% csrf_token %}
 				<button type="submit">Continue Registration</button>
 			</form>
 		{% endif %}<br>
 
-		<h4>Waitlisted sections:</h4>
+		<div class="article-metadata">
+		<h5>Waitlisted sections:</h5>
+		</div><br>
 		{% if waitlist|length > 0 %}
-			<ul>
-				{% for meeting in waitlist %}
-					<div class="article-metadata">
-						<li><b>Course: </b>{{ meeting.course }}<br><b>PILOT Meeting: </b>{{ meeting }}</li>
-					</div>
-				{% endfor %}
-			</ul>
+			{% for meeting in waitlist %}
+					<h6 class="stat-course"><b>{{ meeting.course }}</b></h6>
+					<ul>
+						<li><b>Day: </b>{{ meeting.day }}</li>
+						<li><b>Time: </b>{{ meeting.start_time}} - {{meeting.end_time}}</li>
+						<li><b>Location: </b> TBD </li>
+					</ul>
+			{% endfor %}
 		{% else %}
-			<ul>
-				<li class="article-metadata">You are not waitlisted for any sections.</li><br>
-			</ul>
+			<h6 class="stat-course"><b>You are not waitlisted for any sections.</b></h6>
 		{% endif %}
 		<br>
 	</div>
