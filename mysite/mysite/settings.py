@@ -33,7 +33,6 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'one.apps.OneConfig',
     'users.apps.UsersConfig',
-    'inline_actions',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
