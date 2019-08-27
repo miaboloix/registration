@@ -29,7 +29,7 @@ class MeetingAdmin(admin.ModelAdmin):
 	list_display = ('meeting_name', 'course')
 
 	def meeting_name(self, obj):
-		return "(%s): %s, %s - %s" % (obj.id, obj.day, obj.start_time, obj.end_time)
+		return "(%s): %s, %s - %s" % (obj.course.code, obj.day, obj.start_time, obj.end_time)
 
 
 #admin.site.register(Meeting)

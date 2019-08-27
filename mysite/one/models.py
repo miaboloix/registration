@@ -58,4 +58,4 @@ class Meeting(models.Model):
 	students = models.ManyToManyField(StudentUser, blank=True, related_name="students")
 
 	def __str__(self):
-		return "%s, %s - %s" % (self.day, self.start_time, self.end_time)
+		return "(%s): %s, %s - %s" % (self.course.code, self.day, self.start_time, self.end_time)

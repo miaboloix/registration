@@ -29,6 +29,7 @@
 		{% if waitlist|length > 0 %}
 			{% for meeting in waitlist %}
 					<h6 class="stat-course"><b>{{ meeting.course }}</b></h6>
+		<h7 class="text-muted">You are waitlisted in {{ meeting.waitlist }} position! </h7>
 					<ul>
 						<li><b>Day: </b>{{ meeting.day }}</li>
 						<li><b>Time: </b>{{ meeting.start_time}} - {{meeting.end_time}}</li>
