@@ -12,7 +12,7 @@
 				<ul>
 					<li><b>Day: </b>{{ time.day }}</li>
 					<li><b>Time: </b>{{time.start_time}} - {{time.end_time}}</li>
-					<li><b>Location: </b> TBD</li>
+					<li><b>Location: </b>{{time.location}}</li>
 				</ul>
 			{% endfor %}
 		{% else %}
@@ -28,7 +28,7 @@
 			<ul>
 				<li><b>Day: </b>{{ time.day }}</li>
 				<li><b>Time: </b>{{time.start_time}} - {{time.end_time}}</li>
-				<li><b>Location: </b> TBD</li>
+				<li><b>Location: </b>{{time.location}}</li>
 			</ul>
 		{% endfor %}
 	{% else %}

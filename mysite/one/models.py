@@ -52,6 +52,7 @@ class Meeting(models.Model):
 	start_time = models.CharField(max_length=15)
 	end_time = models.CharField(max_length=15)
 	day = models.CharField(max_length=10, choices=DAYS)
+	location = models.CharField(max_length=200, default='TBD')
 	max = models.IntegerField(default=15)
 	enrollment = models.IntegerField(default=0)
 	waitlist = models.ManyToManyField(StudentUser, blank=True, related_name="waitlist")

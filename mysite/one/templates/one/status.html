@@ -12,7 +12,7 @@
 						<ul>
 							<li><b>Day: </b>{{ meeting.day }}</li>
 							<li><b>Time: </b>{{ meeting.start_time}} - {{meeting.end_time}}</li>
-							<li><b>Location: </b> TBD </li>
+							<li><b>Location: </b>{{meeting.location}}</li>
 						</ul>
 			{% endfor %}
 		{% else %}
@@ -32,7 +32,7 @@
 					<ul>
 						<li><b>Day: </b>{{ meeting.day }}</li>
 						<li><b>Time: </b>{{ meeting.start_time}} - {{meeting.end_time}}</li>
-						<li><b>Location: </b> TBD </li>
+						<li><b>Location: </b>{{meeting.location}}</li>
 					</ul>
 			{% endfor %}
 		{% else %}
