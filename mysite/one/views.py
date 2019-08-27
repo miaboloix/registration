@@ -110,7 +110,7 @@ def get_details(request, pk, course_list):
 				if Meeting.objects.filter(course=get_object_or_404(Course, pk=str(id))).exists():
 					data = request.POST[id]
 					meeting = get_object_or_404(Meeting, pk=str(data))
-					if meeting.enrollment < meeting.max:
+					if len(meeting.students.all()) < meeting.max:
 						vacant_string += str(data) + "%"
 						meeting.students.add(student)
 					else:

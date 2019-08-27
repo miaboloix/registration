@@ -54,9 +54,8 @@ class Meeting(models.Model):
 	day = models.CharField(max_length=10, choices=DAYS)
 	location = models.CharField(max_length=200, default='TBD')
 	max = models.IntegerField(default=15)
-	enrollment = models.IntegerField(default=0)
 	waitlist = models.ManyToManyField(StudentUser, blank=True, related_name="waitlist")
 	students = models.ManyToManyField(StudentUser, blank=True, related_name="students")
 
 	def __str__(self):
-		return "Day: %s, Time: %s - %s" % (self.day, self.start_time, self.end_time)
+		return "%s, %s - %s" % (self.day, self.start_time, self.end_time)
