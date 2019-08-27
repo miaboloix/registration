@@ -31,4 +31,4 @@ RUN pip install psycopg2-binary
 
 # RUN npm install
 # RUN npm run build
-RUN python mysite/manage.py runserver
+# RUN python mysite/manage.py runserver
