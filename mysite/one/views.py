@@ -184,6 +184,7 @@ def status(request):
 		student = get_object_or_404(StudentUser, user=user)
 		enrolled = list(Meeting.objects.filter(students=student))
 		waitlist = list(Meeting.objects.filter(waitlist=student))
+
 		context = {
 			'title': 'Your Status | PILOT Registration',
 			'student': student,
