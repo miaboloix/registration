@@ -4,7 +4,7 @@
 		<h3>Hello, {{student.jhed }}!</h3>
 		<p class="text-muted"> Here is the status of your current PILOT enrollment requests. If you have any questions or concerns, kindly email Ms. Kelly with your concerns at example@gmail.com. </p>
 		<div class="article-metadata">
-		<h5>Enrolled sections:</h5>
+			<h5>Enrolled sections:</h5>
 		</div><br>
 		{% if enrolled|length > 0 %}
 			{% for meeting in enrolled %}
@@ -12,8 +12,11 @@
 						<ul>
 							<li><b>Day: </b>{{ meeting.day }}</li>
 							<li><b>Time: </b>{{ meeting.start_time}} - {{meeting.end_time}}</li>
-							<li><b>Location: </b>{{meeting.location}}</li>
 						</ul>
+						<form action="drop/" method="post" class="drop">
+							<label for="drop_button_1"><input type="submit" name="drop" value="{{student}}+{{meeting}}" id="drop_button_1">
+								Drop This Course</label>
+						</form>
 			{% endfor %}
 		{% else %}
 			<h6 class="stat-course"><b>You are not enrolled in any sections.</b></h6>
@@ -24,17 +27,20 @@
 		{% endif %}<br>
 
 		<div class="article-metadata">
-		<h5>Waitlisted sections:</h5>
+			<h5>Waitlisted sections:</h5>
 		</div><br>
 		{% if waitlist|length > 0 %}
 			{% for meeting in waitlist %}
-					<h6 class="stat-course"><b>{{ meeting.course }}</b></h6>
-		<h7 class="text-muted">You are waitlisted in {{ meeting.waitlist }} position! </h7>
-					<ul>
-						<li><b>Day: </b>{{ meeting.day }}</li>
-						<li><b>Time: </b>{{ meeting.start_time}} - {{meeting.end_time}}</li>
-						<li><b>Location: </b>{{meeting.location}}</li>
-					</ul>
+				<h6 class="stat-course"><b>{{ meeting.course }}</b></h6>
+				<h6 class="text-muted">You are waitlisted in {{ meeting.waitlist }} position! </h6>
+				<ul>
+					<li><b>Day: </b>{{ meeting.day }}</li>
+					<li><b>Time: </b>{{ meeting.start_time}} - {{meeting.end_time}}</li>
+				</ul>
+				<form action="drop/" method="post" class="drop">
+					<label for="drop_button_2"><input type="submit" name="drop" value="{{student}}+{{meeting}}" id="drop_button_2">
+						Drop This Course</label>
+				</form>
 			{% endfor %}
 		{% else %}
 			<h6 class="stat-course"><b>You are not waitlisted for any sections.</b></h6>

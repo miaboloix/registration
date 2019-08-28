@@ -192,3 +192,8 @@ def status(request):
 			'waitlist': waitlist
 		}
 		return render(request, 'one/status.html', context=context)
+
+@login_required
+def drop(request):
+	if request.method == 'POST':
+		student = get_object_or_404(StudentUser, user=request.user)
